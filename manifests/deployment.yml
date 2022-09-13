@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "azureaks83fa1450-a4ca"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "azureaks83fa1450-a4ca"
+  template:
+    metadata:
+      labels:
+        app: "azureaks83fa1450-a4ca"
+    spec:
+      containers:
+        - name: "azureaks83fa1450-a4ca"
+          image: "nccluster.azurecr.io/azureaks83fa1450"
+          ports:
+          - containerPort: 3000
