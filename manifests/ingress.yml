@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "azureaks83fa1450-a4ca"
+    labels:
+        app: "azureaks83fa1450-a4ca"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: azure-aks83fa14508383-azureaks83fa1450-a4ca.c02a549e39b1450ca48f.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "azureaks83fa1450-a4ca"
+                servicePort: 3000
