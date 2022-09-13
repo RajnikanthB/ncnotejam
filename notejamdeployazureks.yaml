@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notejam-deploy
+spec:  
+  selector:
+      matchLabels:
+        app: notejam
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: notejam
+    spec:
+      containers:
+        - name: notejam
+          image: rbollak/notejam:v1.0
+          ports:
+          - containerPort: 3000
+---
+kind: Service
+apiVersion: v1
+metadata:
+   name: notejam-service
+spec:
+   selector:
+     app: notejam
+   ports:
+   - protocol: TCP
+     port: 3000
+     targetPort: 3000
+  type: LoadBalancer
+
+---
