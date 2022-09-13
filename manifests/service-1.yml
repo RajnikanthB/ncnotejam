@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "azureaks83fa1450-fee7"
+    labels:
+        app: "azureaks83fa1450-fee7"
+spec:
+    type: ClusterIP
+    ports:
+    - port: 3000
+      targetPort: 3000
+      protocol: TCP
+      name: http
+    selector:
+        app: "azureaks83fa1450-fee7"
