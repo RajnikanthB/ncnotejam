@@ -1,19 +1,19 @@
 FROM node:lts
 
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /home/runner/work/ncnotejam/ncnotejam
 
 # Install app dependencies
 
 RUN git clone https://github.com/nordcloud/notejam.git
 
-WORKDIR /usr/src/app/notejam/express/notejam/
+WORKDIR /home/runner/work/ncnotejam/ncnotejam/notejam/express/notejam/
 
 RUN npm install
 
 #  Create database schema
 
-WORKDIR  /usr/src/app/notejam/express/notejam/
+WORKDIR  /home/runner/work/ncnotejam/ncnotejam/notejam/express/notejam/
 CMD [ "node", "db.js" ]
 
 EXPOSE 3000
